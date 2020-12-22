@@ -65,6 +65,10 @@ class Player {
     const result = (forwardPasses + backwardPass) / minutesPlayed;
     return result.toFixed(2);
   }
+
+  getID() {
+    return this.id;
+  }
 }
 // create player objects
 const formattedPlayers = json.players.map(item => {
@@ -116,6 +120,7 @@ window.addEventListener("load", () => {
   const cardHTML = currentPlayer => {
     return `
       <div class="player">
+        <img src ="src/images/players/p${currentPlayer.getID()}.png" height='280'>
         <h2>${currentPlayer.playerFullName()}</h2>
         <h3>${currentPlayer.checkPosition()} </h3>
         <p>Appearances ${currentPlayer.getStatValue("appearances")}</p>
