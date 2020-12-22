@@ -5,6 +5,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 const json = require("../json/player-stats.json");
+const app = document.getElementById("app");
 // create class for player data
 class Player {
   constructor(id, name, position, stats) {
@@ -13,7 +14,7 @@ class Player {
     this.position = position;
     this.stats = stats;
   }
-  // return  stat value
+  // return stat value
   getStatValue(statName) {
     // check for missing data
     if (!this.stats.filter(item => item.name === statName).length > 0) {
@@ -47,7 +48,7 @@ class Player {
   }
   // goals per match
   goalsPerMatch() {
-    // number of goals divided by number of apperances
+    // number of goals divided by number of appearances
     const totalGames = parseInt(this.getStatValue("appearances"));
     const goals = parseInt(this.getStatValue("goals"));
     const result = goals / totalGames;
@@ -78,33 +79,41 @@ const formattedPlayers = json.players.map(item => {
 });
 
 // html for dropdown with player id added
-const options = formattedPlayers
-  .map(item => {
-    return `<option value="${
-      item.id
-    }" class="menu__item">${item.playerFullName()}</option>`;
-  })
-  .join(" ");
+const createOptions = playerArr => {
+  return playerArr
+    .map(item => {
+      return `
+      <option value="${item.id}" class="menu__item">
+      ${item.playerFullName()}
+      </option>`;
+    })
+    .join(" ");
+};
+
 // html for select with options
 const selectAndOptions = optionItems => {
-  return `<select name="names" id="names" class="menu">${optionItems}</select>`;
+  return `
+  <div class="player-card">
+    <select name="names" id="names" class="player-card__menu">
+      ${optionItems}
+    </select>
+      <div class="player-card__body"></div>
+  </div>`;
 };
 // complete menu
-const menu = selectAndOptions(options);
-const app = document.getElementById("app");
+const menu = selectAndOptions(createOptions(formattedPlayers));
 
 window.addEventListener("load", () => {
   // add menu to html
-  app.innerHTML = menu;
+  app.insertAdjacentHTML("afterbegin", menu);
+  // menu id
   const selectId = document.getElementById("names");
-
-  const filterById = id => {
-    // find player by id
-    return formattedPlayers.filter(item => item.id === parseInt(id));
+  // find player by id
+  const filterById = (obj, idSearch) => {
+    return obj.filter(item => item.id === parseInt(idSearch));
   };
-
+  // create body of card html
   const cardHTML = currentPlayer => {
-    console.log(currentPlayer);
     return `
       <div class="player">
         <h2>${currentPlayer.playerFullName()}</h2>
@@ -117,18 +126,16 @@ window.addEventListener("load", () => {
       </div>
     `;
   };
-
-  // select item click get value
+  // add html to card
+  const upDataCardHTML = id => {
+    const foundPlayer = filterById(formattedPlayers, id);
+    const playerCardBody = document.querySelector(".player-card__body");
+    playerCardBody.innerHTML = cardHTML(foundPlayer[0]);
+  };
+  // get id from dropdown list
   selectId.addEventListener("change", e => {
     upDataCardHTML(e.target.value);
   });
-
-  const upDataCardHTML = id => {
-    const foundPlayer = filterById(id);
-    const h = cardHTML(foundPlayer[0]);
-    const t = document.querySelector(".hi");
-    t.innerHTML = h;
-  };
   // load first player
   upDataCardHTML(formattedPlayers[0].id);
 });
