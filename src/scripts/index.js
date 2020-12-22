@@ -5,14 +5,16 @@ if (process.env.NODE_ENV === "development") {
 }
 
 const json = require("../json/player-stats.json");
+console.log(json);
 const app = document.getElementById("app");
 // create class for player data
 class Player {
-  constructor(id, name, position, stats) {
+  constructor(id, name, position, stats, currentTeam) {
     this.id = id;
     this.name = name;
     this.position = position;
     this.stats = stats;
+    this.currentTeam = currentTeam;
   }
   // return stat value
   getStatValue(statName) {
@@ -69,6 +71,13 @@ class Player {
   getID() {
     return this.id;
   }
+
+  teamName() {
+    return this.currentTeam.shortName
+      .split(" ")
+      .join("")
+      .toLowerCase();
+  }
 }
 // create player objects
 const formattedPlayers = json.players.map(item => {
@@ -77,7 +86,8 @@ const formattedPlayers = json.players.map(item => {
     playerData.id,
     playerData.name,
     playerData.info.position,
-    item.stats
+    item.stats,
+    playerData.currentTeam
   );
   return createPlayers;
 });
@@ -121,10 +131,13 @@ window.addEventListener("load", () => {
   };
   // create body of card html
   const cardHTML = currentPlayer => {
+    console.log(currentPlayer);
     return `
       <div class="player-card__details">
         <img src ="src/images/players/p${currentPlayer.getID()}.png" height='280' class="player-card__details__player">
+
         <div class="player-card__details__content"> 
+        <div class="player-card__badge player-card__badge--${currentPlayer.teamName()}"></div>
         <h2 class="player-card__details__title">${currentPlayer.playerFullName()}</h2>
         <h3 class="player-card__details__sub-title">${currentPlayer.checkPosition()} </h3>
         <div class="player-card__stats">
@@ -159,6 +172,7 @@ window.addEventListener("load", () => {
             <p class="player-card__stats__name">Passes per minute</p> 
             <p class="player-card__stats__value">${currentPlayer.passesPerMinute()}
             </div>
+
           </div>
       </div>
       </div>
