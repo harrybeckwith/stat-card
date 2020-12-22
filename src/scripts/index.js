@@ -127,16 +127,40 @@ window.addEventListener("load", () => {
         <div class="player-card__details__content"> 
         <h2 class="player-card__details__title">${currentPlayer.playerFullName()}</h2>
         <h3 class="player-card__details__sub-title">${currentPlayer.checkPosition()} </h3>
-        <div class="player-card__stats"> 
-          <p class="player-card__stats__item">Appearances</p> 
-          <p>${currentPlayer.getStatValue("appearances")}</p>
-        </div>
+        <div class="player-card__stats">
       
-        <p>Goals ${currentPlayer.getStatValue("goals")}</p>
-        <p>Assists ${currentPlayer.getStatValue("goal_assist")}</p>
-        <p>Goals per match ${currentPlayer.goalsPerMatch()}</p>
-        <p>Passes per minute ${currentPlayer.passesPerMinute()}</p>
-        </div>
+            <div class="player-card__stats__stat"> 
+              <p class="player-card__stats__name">Appearances</p> 
+              <p class="player-card__stats__value">${currentPlayer.getStatValue(
+                "appearances"
+              )}</p>
+            </div>
+
+            <div class="player-card__stats__stat"> 
+            <p class="player-card__stats__name">Goals</p> 
+            <p class="player-card__stats__value">${currentPlayer.getStatValue(
+              "goals"
+            )}
+            </div>
+
+            <div class="player-card__stats__stat"> 
+            <p class="player-card__stats__name">Assists</p> 
+            <p class="player-card__stats__value">${currentPlayer.getStatValue(
+              "goal_assist"
+            )}
+            </div>
+
+            <div class="player-card__stats__stat"> 
+            <p class="player-card__stats__name">Goals per match</p> 
+            <p class="player-card__stats__value">${currentPlayer.goalsPerMatch()}
+            </div>
+
+            <div class="player-card__stats__stat"> 
+            <p class="player-card__stats__name">Passes per minute</p> 
+            <p class="player-card__stats__value">${currentPlayer.passesPerMinute()}
+            </div>
+          </div>
+      </div>
       </div>
     `;
   };

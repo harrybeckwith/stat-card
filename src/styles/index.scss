@@ -41,17 +41,29 @@ body {
       color: #fff;
       margin-bottom: 0;
     }
+  }
 
-    &__stats {
-      background-color: grey;
+  &__stats {
+    margin-top: 20px;
+    &__stat {
+      background-color: #eaeae9;
       display: flex;
       justify-content: space-between;
-
-      &__item {
-        
-      }
+      padding: 10px;
+      margin-bottom: 3px;
     }
 
-    
+    &__stat:last-child {
+      margin-bottom: 0;
+    }
+
+    &__name,
+    &__value {
+      margin: 0;
+    }
+    &__value {
+      color: #2b0d30;
+      font-weight: bold;
+    }
   }
 }
