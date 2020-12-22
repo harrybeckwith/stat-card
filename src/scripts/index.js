@@ -98,9 +98,12 @@ const createOptions = playerArr => {
 const selectAndOptions = optionItems => {
   return `
   <div class="player-card">
-    <select name="names" id="names" class="player-card__menu">
-      ${optionItems}
-    </select>
+    <div class="player-card__header"> 
+      <select name="names" id="names" class="player-card__menu">
+      <option value="" disabled selected>Select a player...</option>
+        ${optionItems}
+      </select>
+    </div>
       <div class="player-card__body"></div>
   </div>`;
 };
@@ -119,15 +122,21 @@ window.addEventListener("load", () => {
   // create body of card html
   const cardHTML = currentPlayer => {
     return `
-      <div class="player">
-        <img src ="src/images/players/p${currentPlayer.getID()}.png" height='280'>
-        <h2>${currentPlayer.playerFullName()}</h2>
-        <h3>${currentPlayer.checkPosition()} </h3>
-        <p>Appearances ${currentPlayer.getStatValue("appearances")}</p>
+      <div class="player-card__details">
+        <img src ="src/images/players/p${currentPlayer.getID()}.png" height='280' class="player-card__details__player">
+        <div class="player-card__details__content"> 
+        <h2 class="player-card__details__title">${currentPlayer.playerFullName()}</h2>
+        <h3 class="player-card__details__sub-title">${currentPlayer.checkPosition()} </h3>
+        <div class="player-card__stats"> 
+          <p class="player-card__stats__item">Appearances</p> 
+          <p>${currentPlayer.getStatValue("appearances")}</p>
+        </div>
+      
         <p>Goals ${currentPlayer.getStatValue("goals")}</p>
         <p>Assists ${currentPlayer.getStatValue("goal_assist")}</p>
         <p>Goals per match ${currentPlayer.goalsPerMatch()}</p>
         <p>Passes per minute ${currentPlayer.passesPerMinute()}</p>
+        </div>
       </div>
     `;
   };
