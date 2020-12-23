@@ -1,6 +1,8 @@
 @import "./variables";
+@import "./typography";
 
 body {
+  font-family: $arial;
   background-color: $aqua-haze;
 }
 
@@ -20,33 +22,51 @@ body {
     padding-bottom: 10px;
     padding-left: 10px;
     width: 100%;
-    background-color: $gallery;
     border: none;
+    color: $black;
+    font-size: 16px;
+    line-height: 1;
+    background: url("~/images/icons/down-arrow.png") no-repeat right $gallery;
+    -webkit-appearance: none;
+    background-position-x: 300px;
   }
 
   &__details {
     &__player {
       display: block;
+      width: 180px;
+      height: 229px;
+    }
+
+    &__bg {
+      background: url("~/images/backgrounds/background-pattern.png") no-repeat;
+      padding-left: 10px;
+      padding-top: 25px;
+      background-position-y: -8px;
+      background-size: contain;
     }
 
     &__content {
       position: relative;
-      background-color: $red-ribbon;
+      background-color: $razzmatazz;
       padding: 15px;
     }
 
     &__title {
       margin-top: 0;
+      font-size: 22px;
     }
 
     &__sub-title {
       margin-top: 5px;
+      font-size: 16px;
     }
 
     &__title,
     &__sub-title {
       color: $white;
       margin-bottom: 0;
+      font-weight: $light;
     }
   }
 
@@ -54,11 +74,12 @@ body {
     margin-top: 20px;
 
     &__stat {
-      background-color: $desert-storm;
+      background-color: $gallery;
       display: flex;
       justify-content: space-between;
       padding: 10px;
       margin-bottom: 3px;
+      align-items: center;
     }
 
     &__stat:last-child {
@@ -68,31 +89,33 @@ body {
     &__name,
     &__value {
       margin: 0;
+      color: $mardi-gras;
     }
 
     &__value {
-      color: $valentino;
       font-weight: bold;
+      font-size: 19px;
     }
   }
 
   &__badge {
-    background-image: url("~/images/badges_sprite.png");
+    background-image: url("~/images/badges/badges_sprite.png");
     background-repeat: no-repeat;
-    height: 105px;
-    width: 104px;
+    height: 82px;
+    width: 82px;
     background-color: $white;
     border-radius: 50%;
     position: absolute;
     right: 21px;
     top: -43px;
+    background-size: 1113%;
 
     &--spurs {
       background-position: -500px -1000px;
     }
 
     &--arsenal {
-      background-position: -97px -96px;
+      background-position: -75px -73px;
     }
 
     &--manutd {
@@ -100,7 +123,7 @@ body {
     }
 
     &--leicester {
-      background-position: 2px 4px;
+      background-position: 3px 4px;
     }
 
     &--mancity {

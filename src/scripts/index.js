@@ -132,8 +132,9 @@ window.addEventListener("load", () => {
   const cardHTML = currentPlayer => {
     return `
       <div class="player-card__details">
-        <img src ="src/images/players/p${currentPlayer.getID()}.png" height='280' class="player-card__details__player">
-
+        <div class="player-card__details__bg"> 
+          <img src ="src/images/players/p${currentPlayer.getID()}.png"  class="player-card__details__player">
+        </div>
         <div class="player-card__details__content"> 
         <div class="player-card__badge player-card__badge--${currentPlayer.teamName()}"></div>
         <h2 class="player-card__details__title">${currentPlayer.playerFullName()}</h2>
