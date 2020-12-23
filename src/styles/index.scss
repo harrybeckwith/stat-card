@@ -1,9 +1,12 @@
+@import "./variables";
+
 body {
-  background-color: #f7f9fa;
+  background-color: $aqua-haze;
 }
+
 .player-card {
   margin-top: 50px;
-  background-color: #fff;
+  background-color: $white;
   margin-left: auto;
   margin-right: auto;
   max-width: 350px;
@@ -17,7 +20,7 @@ body {
     padding-bottom: 10px;
     padding-left: 10px;
     width: 100%;
-    background-color: #eaeaea;
+    background-color: $gallery;
     border: none;
   }
 
@@ -25,11 +28,13 @@ body {
     &__player {
       display: block;
     }
+
     &__content {
       position: relative;
-      background-color: #ec0150;
+      background-color: $red-ribbon;
       padding: 15px;
     }
+
     &__title {
       margin-top: 0;
     }
@@ -40,15 +45,16 @@ body {
 
     &__title,
     &__sub-title {
-      color: #fff;
+      color: $white;
       margin-bottom: 0;
     }
   }
 
   &__stats {
     margin-top: 20px;
+
     &__stat {
-      background-color: #eaeae9;
+      background-color: $desert-storm;
       display: flex;
       justify-content: space-between;
       padding: 10px;
@@ -63,8 +69,9 @@ body {
     &__value {
       margin: 0;
     }
+
     &__value {
-      color: #2b0d30;
+      color: $valentino;
       font-weight: bold;
     }
   }
@@ -74,23 +81,28 @@ body {
     background-repeat: no-repeat;
     height: 105px;
     width: 104px;
-    background-color: #fff;
+    background-color: $white;
     border-radius: 50%;
     position: absolute;
     right: 21px;
     top: -43px;
+
     &--spurs {
       background-position: -500px -1000px;
     }
+
     &--arsenal {
       background-position: -97px -96px;
     }
+
     &--manutd {
       background-position: -597px -797px;
     }
+
     &--leicester {
       background-position: 2px 4px;
     }
+
     &--mancity {
       background-position: -797px -697px;
     }

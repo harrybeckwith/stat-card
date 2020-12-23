@@ -3,9 +3,8 @@ import "../styles/index.scss";
 if (process.env.NODE_ENV === "development") {
   require("../index.html");
 }
-
+// stat card code start
 const json = require("../json/player-stats.json");
-console.log(json);
 const app = document.getElementById("app");
 // create class for player data
 class Player {
@@ -131,7 +130,6 @@ window.addEventListener("load", () => {
   };
   // create body of card html
   const cardHTML = currentPlayer => {
-    console.log(currentPlayer);
     return `
       <div class="player-card__details">
         <img src ="src/images/players/p${currentPlayer.getID()}.png" height='280' class="player-card__details__player">
@@ -191,3 +189,4 @@ window.addEventListener("load", () => {
   // load first player
   upDataCardHTML(formattedPlayers[0].id);
 });
+// stat card code end
