@@ -26,7 +26,7 @@ npm run build
 
 Once npm run buld is used open build/index.html to view.
 
-### Features:
+### Features
 
 - ES6 Support via [babel](https://babeljs.io/) (v7)
 - JavaScript Linting via [eslint-loader](https://github.com/MoOx/eslint-loader)
