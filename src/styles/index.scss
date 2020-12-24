@@ -26,10 +26,11 @@ body {
     color: $black;
     font-size: 16px;
     line-height: 1;
-    background: url("../../public/images/icons/down-arrow.png") no-repeat right
-      $gallery;
+    background: url("/public/images/icons/down-arrow.png") right $gallery;
+    background-repeat: no-repeat;
     -webkit-appearance: none;
     background-position-x: 300px;
+    outline: 0;
   }
 
   &__details {
@@ -40,8 +41,8 @@ body {
     }
 
     &__bg {
-      background: url("../../public/images/backgrounds/background-pattern.png")
-        no-repeat;
+      background: url("/public/images/backgrounds/background-pattern.png");
+      background-repeat: no-repeat;
       padding-left: 10px;
       padding-top: 25px;
       background-position-y: 8px;
@@ -102,7 +103,7 @@ body {
   }
 
   &__badge {
-    background-image: url("../../public/images/badges/badges_sprite.png");
+    background-image: url("/public/images/badges/badges_sprite.png");
     background-repeat: no-repeat;
     height: 82px;
     width: 82px;
