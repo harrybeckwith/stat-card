@@ -1,8 +1,6 @@
-# Webpack Frontend Starterkit
+# stat card
 
-[![Dependabot badge](https://flat.badgen.net/dependabot/wbkd/webpack-starter?icon=dependabot)](https://dependabot.com/)
-
-A lightweight foundation for your next webpack based frontend project.
+A stat card displaying premiership player data.
 
 ### Installation
 
@@ -22,11 +20,11 @@ npm start
 npm run build
 ```
 
-### View build file:
+### View build file
 
 Once npm run buld is used open build/index.html to view.
 
-### Notes on code:
+### Notes on code
 
 The html and javascript are rendered from the javascript file index.js. Applying this code to another project would mean taking js file and styles only for reuse. An object class is used so the code can be extended with further data and methods if needed. Functional javascript is also used where possible to help reduce complexity.
 
@@ -47,5 +45,3 @@ The drop down lists player names gathered from Json data. Each player when selec
 - Style Linting via [stylelint](https://stylelint.io/)
 
 When you run `npm run build` we use the [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) to move the css to a separate file. The css file gets included in the head of the `index.html`.
-
-# stat-card
