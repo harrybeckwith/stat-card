@@ -1,0 +1,129 @@
+.player-card {
+    margin-top: 50px;
+    background-color: $white;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 350px;
+  
+    &__header {
+      padding: 10px;
+    }
+  
+    &__menu {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      width: 100%;
+      border: none;
+      color: $black;
+      font-size: 16px;
+      line-height: 1;
+      background: url("/public/images/icons/down-arrow.png") right $gallery;
+      background-repeat: no-repeat;
+      -webkit-appearance: none;
+      background-position-x: 300px;
+      outline: 0;
+    }
+  
+    &__details {
+      &__player {
+        display: block;
+        width: 180px;
+        height: 229px;
+      }
+  
+      &__bg {
+        background: url("/public/images/backgrounds/background-pattern.png");
+        background-repeat: no-repeat;
+        padding-left: 10px;
+        padding-top: 25px;
+        background-position-y: 8px;
+        background-position-x: 62px;
+        background-size: contain;
+      }
+  
+      &__content {
+        position: relative;
+        background-color: $razzmatazz;
+        padding: 15px;
+      }
+  
+      &__title {
+        margin-top: 0;
+        font-size: 22px;
+      }
+  
+      &__sub-title {
+        margin-top: 5px;
+        font-size: 16px;
+      }
+  
+      &__title,
+      &__sub-title {
+        color: $white;
+        margin-bottom: 0;
+        font-weight: $light;
+      }
+    }
+  
+    &__stats {
+      margin-top: 20px;
+  
+      &__stat {
+        background-color: $gallery;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        margin-bottom: 3px;
+        align-items: center;
+      }
+  
+      &__stat:last-child {
+        margin-bottom: 0;
+      }
+  
+      &__name,
+      &__value {
+        margin: 0;
+        color: $mardi-gras;
+      }
+  
+      &__value {
+        font-weight: bold;
+        font-size: 19px;
+      }
+    }
+  
+    &__badge {
+      background-image: url("/public/images/badges/badges_sprite.png");
+      background-repeat: no-repeat;
+      height: 82px;
+      width: 82px;
+      background-color: $white;
+      border-radius: 50%;
+      position: absolute;
+      right: 21px;
+      top: -43px;
+      background-size: 1113%;
+  
+      &--spurs {
+        background-position: -381px -761px;
+      }
+  
+      &--arsenal {
+        background-position: -75px -73px;
+      }
+  
+      &--manutd {
+        background-position: -452px -605px;
+      }
+  
+      &--leicester {
+        background-position: 3px 4px;
+      }
+  
+      &--mancity {
+        background-position: -605px -530px;
+      }
+    }
+  }
