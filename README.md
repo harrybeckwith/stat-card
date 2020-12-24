@@ -26,7 +26,7 @@ Once npm run buld is used open build/index.html to view.
 
 ### Notes on code
 
-The html and javascript are rendered from the javascript file index.js. Applying this code to another project would mean taking js file and styles only for reuse. An object class is used so the code can be extended with further data and methods if needed. Functional javascript is also used where possible to help reduce complexity.
+The html and javascript are rendered from the javascript file index.js. Applying this code to another project would mean taking the js file and styles only for reuse. An object class is used so the code can be extended with further data and methods if needed. Functional javascript is also used where possible to help reduce complexity.
 
 Javascript ES6 is used which is compiled using babel. Sass is used and once build is run this is compiled into minified css through webpack.
 
