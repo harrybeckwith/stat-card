@@ -70,7 +70,7 @@ class Player {
   getID() {
     return this.id;
   }
-
+  // get and formatt team name
   teamName() {
     return this.currentTeam.shortName
       .split(" ")
@@ -133,7 +133,7 @@ window.addEventListener("load", () => {
     return `
       <div class="player-card__details">
         <div class="player-card__details__bg"> 
-          <img src ="src/images/players/p${currentPlayer.getID()}.png"  class="player-card__details__player">
+          <img src ="public/images/players/p${currentPlayer.getID()}.png"  class="player-card__details__player">
         </div>
         <div class="player-card__details__content"> 
         <div class="player-card__badge player-card__badge--${currentPlayer.teamName()}"></div>
